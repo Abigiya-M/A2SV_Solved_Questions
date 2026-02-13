@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mp = defaultdict(int)
+
+        for i in range(len(nums)):
+            if nums[i] in mp:
+                return [i, mp[nums[i]]]
+            else:
+                mp[target-nums[i]] = i
+            
+        
